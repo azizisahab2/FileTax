@@ -1,0 +1,108 @@
+CREATE TABLE [dbo].[tbl_admin] (
+    [Id]       INT          IDENTITY (1, 1) NOT NULL,
+    [email]    VARCHAR (50) NULL,
+    [password] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[tbl_contact] (
+    [Id]    INT          IDENTITY (1, 1) NOT NULL,
+    [name]  VARCHAR (50) NULL,
+    [email] VARCHAR (50) NULL,
+    [phone] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[tbl_dscInfo] (
+    [Id]                INT           IDENTITY (1, 1) NOT NULL,
+    [user_type]         VARCHAR (100) NULL,
+    [purpose]           VARCHAR (100) NULL,
+    [rate]              VARCHAR (100) NULL,
+    [cllasss]           VARCHAR (100) NULL,
+    [name]              VARCHAR (100) NULL,
+    [name_image]        VARCHAR (MAX) NULL,
+    [pan_no]            VARCHAR (100) NULL,
+    [image_panNo]       VARCHAR (MAX) NULL,
+    [adhar_no]          VARCHAR (100) NULL,
+    [image_adharNo]     VARCHAR (MAX) NULL,
+    [mobile]            VARCHAR (100) NULL,
+    [email]             VARCHAR (100) NULL,
+    [gstin]             VARCHAR (100) NULL,
+    [certi_incorp]      VARCHAR (100) NULL,
+    [certi_incorpImage] VARCHAR (100) NULL,
+    [comp_panNo]        VARCHAR (100) NULL,
+    [comp_imagePan]     VARCHAR (MAX) NULL,
+    [director_panNo]    VARCHAR (100) NULL,
+    [director_imagePan] VARCHAR (MAX) NULL,
+    [category]          VARCHAR (100) NULL,
+    [sub_category]      VARCHAR (100) NULL,
+    [dsc_id]            VARCHAR (100) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[tbl_FAQ] (
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [service_id] VARCHAR (50)  NULL,
+    [question]   VARCHAR (MAX) NULL,
+    [answer]     VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[tbl_package] (
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [service_id]   VARCHAR (50)  NULL,
+    [service_name] VARCHAR (50)  NULL,
+    [package_type] VARCHAR (50)  NULL,
+    [package_text] VARCHAR (MAX) NULL,
+    [price]        VARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[tbl_package_service] (
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [package_id]   VARCHAR (50)  NULL,
+    [service_id]   VARCHAR (50)  NULL,
+    [service_text] VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[tbl_querry] (
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [name]         VARCHAR (50)  NULL,
+    [country_name] VARCHAR (50)  NULL,
+    [email]        VARCHAR (50)  NULL,
+    [question]     VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_service_desc] (
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [service_id]  VARCHAR (50)  NULL,
+    [description] VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[tbl_services] (
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [services]    VARCHAR (50)  NULL,
+    [image]       IMAGE         NULL,
+    [service_url] VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
